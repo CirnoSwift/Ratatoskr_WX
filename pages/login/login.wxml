@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <!--新建表单用于提交用户登录信息-->
+  <form bindsubmit='formSub'>
+    <!--以行展示-->
+    <view class='row'>
+      <text>用户名：</text>
+      <input type='text' name='username' placeholder='请输入用户名'></input>
+    </view>
+    <view class='row'>
+      <text>密码：</text>
+      <input type='password' name='password' placeholder='请输入密码'></input>
+    </view>
+    <view class='row'>
+      <button type='primary' form-type='submit'>登录</button>
+    </view>
+  </form>
+</view>

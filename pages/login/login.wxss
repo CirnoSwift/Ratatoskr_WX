@@ -1,0 +1,38 @@
+/* pages/login/login.wxss */
+.container{
+  padding:1rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+
+/* 指定row这个view class的排布 */
+.row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+/* 指定row中text元素的排布,即“用户名”和“密码”两text */
+.row text{
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* 指定row中input输入框元素的属性 */
+.row input{
+  font-size: 0.7rem;
+  flex-grow: 3;
+  border: 1px solid #0099cc;
+  display: inline-block;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.15rem #aaa;
+  padding: 0.3rem;
+}
+
+/* 登录按钮 */
+.row button{
+  padding: 0 2rem;
+  margin: 5rem;
+  box-align: center;
+}
