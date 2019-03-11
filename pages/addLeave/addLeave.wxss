@@ -1,0 +1,32 @@
+/* pages/addLeave/addLeave.wxss */
+
+.container {
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.row button {
+  padding: 0 2rem;
+  margin: 3rem 1rem;
+  flex-grow: 1;
+}
+
+.area {
+  width: 750rpx;
+  height: 220rpx;
+  background: rgba(255, 255, 255, 1);
+  font-size: 30rpx;
+  text-indent: 28rpx;
+  border: 1rpx solid gainsboro;
+  margin-top: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}

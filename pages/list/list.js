@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    uid:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    //首先从缓存中获取到当前用户的uid
+    wx.getStorage({
+      key: 'uid',
+      success: function (res) {
+        that.setData({ uid: res.data })
+      }
+    });
   },
 
   /**
@@ -87,13 +95,12 @@ Page({
     wx.request({
       url: 'http://127.0.0.1/ratatoskr/user/clockon',
       method:'GET',
-      data:{"uid":that.data.uid},
+      data:{"uid":this.data.uid},
       success:function(res){
         var result = res.data.success;
         var toastText = "操作成功";
         if(result!=true){
           toastText = "操作失败！"+res.data.errMsg;
-          console.log(toastText);
         }
         wx.showToast({
           title: toastText,
@@ -104,7 +111,16 @@ Page({
         that.setData({
           list:that.data.list
         });
+        //注入完数据后调用onshow方法重新加载页面数据
+        that.onShow();
       }
+    })
+  },
+
+  // 请假按钮方法
+  leave:function(e){
+    wx.navigateTo({
+      url: '../addLeave/addLeave',
     })
   }
 })
